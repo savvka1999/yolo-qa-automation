@@ -1,0 +1,22 @@
+yaml
+name: YOLO QA Tests
+
+on:
+  push:
+    branches: [ "main" ]  # Запускать при пуше в ветку main
+  pull_request:
+    branches: [ "main" ]  # И при создании Pull Request
+
+jobs:
+  test:
+    runs-on: ubuntu-latest # GitHub запустит это на своем сервере Linux
+
+    steps:
+    - name: Копируем код из репозитория
+      uses: actions/checkout@v4
+
+    - name: Собираем Docker-образ
+      run: docker build -t qa-yolo-tests .
+
+    - name: Запускаем тесты внутри контейнера
+      run: docker run --rm qa-yolo-tests
