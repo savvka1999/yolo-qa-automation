@@ -1,11 +1,9 @@
 name: YOLO QA Tests
-
 on:
   push:
     branches: [ "main" ]  # Запускать при пуше в ветку main
   pull_request:
     branches: [ "main" ]  # И при создании Pull Request
-
 jobs:
   test:
     runs-on: ubuntu-latest # GitHub запустит это на своем сервере Linux
