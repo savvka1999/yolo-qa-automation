@@ -41,7 +41,6 @@ It automatically runs inference on video files, compares the performance of two 
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
-
 Run the tests:
 
 bash
@@ -56,6 +55,7 @@ Run the container with tests:
 
 bash
 docker run --rm qa-yolo-tests
+
 ⚙️ CI/CD
 The project is configured to automatically run tests on every push to the main (or master) branch.
 Build results and logs are available in the Actions tab on GitHub.
